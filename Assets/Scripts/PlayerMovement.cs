@@ -1,4 +1,7 @@
+using System;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerMovement : MonoBehaviour
@@ -7,12 +10,11 @@ public class PlayerMovement : MonoBehaviour
     private float _horizontalMovement;
     private float _verticalMovement;
     private Vector3 _movement;
-    [SerializeField]  private float _speed = 2f;
+    [SerializeField] private float _speed = 2f;
+
     void Start()
     {
         _rb = GetComponent<Rigidbody>();
-        
-        
     }
 
     void Update()
@@ -23,7 +25,7 @@ public class PlayerMovement : MonoBehaviour
         _movement.Normalize();
         _movement *= _speed;
         _movement.y = _rb.linearVelocity.y;
-        if ( _rb != null)
+        if (_rb != null)
         {
             _rb.linearVelocity = _movement;
         }
@@ -31,6 +33,6 @@ public class PlayerMovement : MonoBehaviour
         {
             Debug.LogError("No RigidBody Attached !");
         }
+        
     }
-    public void  
 }

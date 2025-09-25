@@ -1,4 +1,6 @@
+using System;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class UIControler : MonoBehaviour
@@ -9,10 +11,17 @@ public class UIControler : MonoBehaviour
    {
        UpdateScore(0);
    }
-       
-           
+   private void OnEnable()
+   {
+       Player_Collect.onTargetCollected += UpdateScore;
+   }
+
    public void UpdateScore(int newscore)
    {
        _scoreText.text = $"Score : {newscore.ToString()}";
+       if (newscore >10)
+       { 
+           _scoreText.color = Color.red;
+       }
    }
 }
