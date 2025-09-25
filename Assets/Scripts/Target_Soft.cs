@@ -1,14 +1,15 @@
+using System;
 using UnityEngine;
 
 public class Target_Soft : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    private void OnTriggerEnter(Collision other)
+    [SerializeField] private int _targetValue = 1;
+    private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.GetComponent<Player_Collect>() !=null) 
+        if (other.gameObject.GetComponent<Player_Collect>() != null)
         {
+            other.gameObject.GetComponent<Player_Collect>().UpdateScore(_targetValue);
             Destroy(gameObject);
         }
-        
     }
 }
