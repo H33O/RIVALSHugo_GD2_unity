@@ -32,4 +32,5 @@ public class PlayerMovement : MonoBehaviour
             Debug.LogError("No RigidBody Attached !");
         }
     }
+    public void  
 }
