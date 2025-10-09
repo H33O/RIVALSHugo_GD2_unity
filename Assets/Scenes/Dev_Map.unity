@@ -185,6 +185,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 75201865}
+  - component: {fileID: 75201866}
   m_Layer: 0
   m_Name: CameraLocator
   m_TagString: Untagged
@@ -208,6 +209,19 @@ Transform:
   - {fileID: 330585546}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &75201866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 75201864}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c967574c7e14dae49aa8cd8fb81bbd98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _player: {fileID: 350914709}
 --- !u!1 &82927667
 GameObject:
   m_ObjectHideFlags: 0
@@ -616,13 +630,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.43872118, y: -0, z: -0, w: 0.8986232}
-  m_LocalPosition: {x: 0, y: 14.15, z: -14.6}
+  m_LocalRotation: {x: 0.61560357, y: -0, z: -0, w: 0.788056}
+  m_LocalPosition: {x: 0, y: 19.9, z: -6.16}
   m_LocalScale: {x: 2, y: 1.734, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 75201865}
-  m_LocalEulerAnglesHint: {x: 52.045, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 75.992, y: 0, z: 0}
 --- !u!114 &330585547
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -667,6 +681,11 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
+--- !u!1 &350914709 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2044374373307521441, guid: e7d5b1c06649fc344855c929847a9f09, type: 3}
+  m_PrefabInstance: {fileID: 3062676772914260980}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &400327424 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9181342190554515090, guid: cafdb3a6329b9e24ba0cd2c970ed951a, type: 3}
@@ -2044,7 +2063,7 @@ PrefabInstance:
     - target: {fileID: 912905284445958049, guid: e7d5b1c06649fc344855c929847a9f09, type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+      objectReference: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
     - target: {fileID: 1749276549318561399, guid: e7d5b1c06649fc344855c929847a9f09, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
