@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.InputSystem.Controls;
+using Random = UnityEngine.Random;
 
 public class WallSpawner : MonoBehaviour
 {
@@ -22,6 +23,5 @@ public class WallSpawner : MonoBehaviour
         Instantiate(wallPrefab,transform.position,Quaternion.identity);
         
     }
-
 }
 
