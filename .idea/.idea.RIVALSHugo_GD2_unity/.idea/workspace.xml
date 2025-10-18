@@ -16,7 +16,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/InputSystem_Actions.inputactions" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Camerafollow.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Ennemy.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/EnemyBehavior.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/LevelManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/WallSpawner.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -109,6 +109,7 @@
       <updated>1758798550710</updated>
       <workItem from="1758798555970" duration="14929000" />
       <workItem from="1759995344096" duration="12177000" />
+      <workItem from="1760825148802" duration="3313000" />
     </task>
     <servers />
   </component>

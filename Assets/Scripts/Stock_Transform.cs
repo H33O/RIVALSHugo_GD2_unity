@@ -13,7 +13,7 @@ public class Stock_Transform : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(Stockage_Transform.ToString());
+       
     }
 }
 
