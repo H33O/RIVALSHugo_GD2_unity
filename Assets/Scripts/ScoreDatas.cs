@@ -4,4 +4,9 @@ using UnityEngine;
 public class ScoreDatas : ScriptableObject
 {
     public int ScoreValue = 0;
+    
+    public void ResetScore()
+    {
+        ScoreValue = 0;
+    }
 }

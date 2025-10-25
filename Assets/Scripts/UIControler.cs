@@ -5,23 +5,29 @@ using UnityEngine;
 
 public class UIControler : MonoBehaviour
 {
-   [SerializeField] private TMP_Text _scoreText;
+    [SerializeField] private TMP_Text _scoreText;
 
-   private void Start()
-   {
-       UpdateScore(0);
-   }
-   private void OnEnable()
-   {
-       Player_Collect.onTargetCollected += UpdateScore;
-   }
+    private void Start()
+    {
+        UpdateScore(0);
+    }
 
-   public void UpdateScore(int newscore)
-   {
-       _scoreText.text = $"Score : {newscore.ToString()}";
-       if (newscore >10)
-       { 
-           _scoreText.color = Color.red;
-       }
-   }
+    private void OnEnable()
+    {
+        Player_Collect.onTargetCollected += UpdateScore;
+    }
+
+    private void OnDisable()
+    {
+        Player_Collect.onTargetCollected -= UpdateScore;
+    }
+
+    public void UpdateScore(int newscore)
+    {
+        _scoreText.text = $"Score : {newscore.ToString()}";
+        if (newscore > 50)
+        { 
+            _scoreText.color = Color.red;
+        }
+    }
 }
