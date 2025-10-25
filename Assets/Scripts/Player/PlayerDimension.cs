@@ -5,6 +5,11 @@ public class PlayerDimension : MonoBehaviour
     public BoxCollider blueCollider;
     public BoxCollider redCollider;
     public MeshRenderer meshRenderer;
+    
+    [Header("Dimension Colors")]
+    [SerializeField] private Color _blueColor;
+    [SerializeField] private Color _redColor;
+    
     private bool isBlueDimension = true;
 
     void Start()
@@ -26,18 +31,15 @@ public class PlayerDimension : MonoBehaviour
     {
         if (blue)
         {
-            // Blue actif
-            blueCollider.transform.localPosition =new Vector3(0f, 0f, 0f);   // sur la carte
-            redCollider.transform.localPosition =new Vector3(0f, -5f, 0f); // sous la carte
-            meshRenderer.material.color = Color.cyan;
-            
+            blueCollider.transform.localPosition = new Vector3(0f, 0f, 0f);
+            redCollider.transform.localPosition = new Vector3(0f, -5f, 0f);
+            meshRenderer.material.color = _blueColor;
         }
         else
         {
-            // Red actif
-            redCollider.transform.localPosition =new Vector3(0f, 0f, 0f);
-            blueCollider.transform.localPosition =new Vector3(0f, -5f, 0f);
-            meshRenderer.material.color = Color.red;
+            redCollider.transform.localPosition = new Vector3(0f, 0f, 0f);
+            blueCollider.transform.localPosition = new Vector3(0f, -5f, 0f);
+            meshRenderer.material.color = _redColor;
         }
     }
 }

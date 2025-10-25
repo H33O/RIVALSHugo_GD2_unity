@@ -5,17 +5,25 @@ using UnityEngine;
 public class EnemyBehaviorRed : MonoBehaviour
 {
     [SerializeField] private int _targetValue = 1;
+    [SerializeField] private AudioClip _eatSound;
+    [SerializeField] private AudioClip _loseSound;
     private bool hasCollided = false;
+    private AudioSource _audioSource;
+
+    private void Start()
+    {
+        _audioSource = GetComponent<AudioSource>();
+    }
 
     private void OnTriggerEnter(Collider other)
     {
         if (hasCollided) return;
-        
+
         if (other.CompareTag("Wall"))
         {
             Destroy(gameObject);
             return;
-        }    
+        }
 
         if (other.CompareTag("Blue"))
         {
@@ -24,6 +32,11 @@ public class EnemyBehaviorRed : MonoBehaviour
             {
                 hasCollided = true;
                 other.gameObject.GetComponent<Player_Collect>().UpdateScore(-1);
+                if (_audioSource != null && _loseSound != null)
+                {
+                    _audioSource.PlayOneShot(_loseSound);
+                }
+
             }
         }
         else if (other.CompareTag("Red"))
@@ -33,10 +46,14 @@ public class EnemyBehaviorRed : MonoBehaviour
             {
                 hasCollided = true;
                 other.gameObject.GetComponent<Player_Collect>().UpdateScore(1);
-                Destroy(gameObject);
+
+                if (_audioSource != null && _eatSound != null)
+                {
+                    _audioSource.PlayOneShot(_eatSound);
+                    Destroy(gameObject, _eatSound.length);
+                    Destroy(gameObject, 0.2f);
+                }
             }
-               
-            
         }
     }
 }

@@ -44,7 +44,7 @@
 }</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\6000.0.53f1\Editor\Unity.exe" />
+      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\6000.0.53f1-x86_64\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-projectPath C:\Users\hugo.rivals\Documents\GitHub\RIVALSHugo_GD2_unity -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="C:\Users\hugo.rivals\Documents\GitHub\RIVALSHugo_GD2_unity" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -56,7 +56,7 @@
       <method v="2" />
     </configuration>
     <configuration name="Unit Tests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\6000.0.53f1\Editor\Unity.exe" />
+      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\6000.0.53f1-x86_64\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath C:\Users\hugo.rivals\Documents\GitHub\RIVALSHugo_GD2_unity -testResults Logs/results.xml -logFile Logs/Editor.log -testPlatform EditMode -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="C:\Users\hugo.rivals\Documents\GitHub\RIVALSHugo_GD2_unity" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -110,6 +110,7 @@
       <workItem from="1759995344096" duration="12177000" />
       <workItem from="1760825148802" duration="3313000" />
       <workItem from="1761340247716" duration="14550000" />
+      <workItem from="1761400737809" duration="6583000" />
     </task>
     <servers />
   </component>

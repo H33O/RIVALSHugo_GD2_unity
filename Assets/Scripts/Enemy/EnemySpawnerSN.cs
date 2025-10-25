@@ -4,8 +4,8 @@ public class EnemySpawnerSN : MonoBehaviour
 {
     
     [SerializeField] private GameObject _enemyPrefab;
-    [SerializeField] private float _spawnInterval = 2f;
-    [SerializeField] private float _spawnAreaLength = 71f;
+    [SerializeField] private float _spawnInterval = 1f;
+    [SerializeField] private float _spawnAreaLength = 21f;
     [SerializeField] private Vector3 _spawnOffset = Vector3.zero;
    
     
