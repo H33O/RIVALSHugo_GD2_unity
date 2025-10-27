@@ -7,6 +7,8 @@ public class VictoryManager : MonoBehaviour
     [SerializeField] private int _scoreToWin = 50;
     [SerializeField] private GameObject _victoryCanvas;
     [SerializeField] private string _nextSceneName = "Map_2";
+    [SerializeField] private AudioClip _VictorySound;
+    private AudioSource _audioSource;
 
     private bool _hasWon = false;
 
@@ -22,10 +24,8 @@ public class VictoryManager : MonoBehaviour
 
     private void Start()
     {
-        if (_victoryCanvas != null)
-        {
-            _victoryCanvas.SetActive(false);
-        }
+        _victoryCanvas.SetActive(false);
+        _audioSource = GetComponent<AudioSource>();
     }
 
     private void OnScoreChanged(int currentScore)
@@ -47,12 +47,8 @@ public class VictoryManager : MonoBehaviour
     private void ShowVictory()
     {
         _hasWon = true;
-        
-        if (_victoryCanvas != null)
-        {
-            _victoryCanvas.SetActive(true);
-        }
-        
+        _victoryCanvas.SetActive(true);
+        _audioSource.PlayOneShot(_VictorySound);
         
         Debug.Log("Victoire ! Appuyez sur Enter pour continuer.");
     }
