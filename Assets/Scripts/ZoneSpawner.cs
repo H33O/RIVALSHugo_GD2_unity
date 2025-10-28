@@ -1,10 +1,13 @@
+using System.Collections;
 using UnityEngine;
 
-public class BonusSpawner : MonoBehaviour
+public class ZoneSpawner : MonoBehaviour
 {
     [Header("Spawn Settings")]
-    [SerializeField] private GameObject _BonusSpeed;
+    [SerializeField] private GameObject _warningPrefab;
+    [SerializeField] private GameObject _zoneKillPrefab;
     [SerializeField] private float _spawnInterval = 3f;
+    [SerializeField] private float _warningDuration = 1f;
     
     [Header("Spawn Area (Rectangle)")]
     [SerializeField] private float _spawnAreaWidth = 64f;
@@ -22,19 +25,40 @@ public class BonusSpawner : MonoBehaviour
     {
         if (Time.time >= _nextSpawnTime)
         {
-            SpawnEnemy();
+            StartCoroutine(SpawnZoneKillWithWarning());
             _nextSpawnTime = Time.time + _spawnInterval;
         }
     }
 
-    private void SpawnEnemy()
+    private IEnumerator SpawnZoneKillWithWarning()
+    {
+        Vector3 spawnPosition = GetRandomSpawnPosition();
+        
+        GameObject warning = null;
+        if (_warningPrefab != null)
+        {
+            warning = Instantiate(_warningPrefab, spawnPosition, Quaternion.identity);
+        }
+        
+        yield return new WaitForSeconds(_warningDuration);
+        
+        if (warning != null)
+        {
+            Destroy(warning);
+        }
+        
+        if (_zoneKillPrefab != null)
+        {
+            Instantiate(_zoneKillPrefab, spawnPosition, transform.rotation * Quaternion.Euler(0, 180, 0));
+        }
+    }
+
+    private Vector3 GetRandomSpawnPosition()
     {
         float randomX = Random.Range(-_spawnAreaWidth / 2f, _spawnAreaWidth / 2f);
         float randomZ = Random.Range(-_spawnAreaHeight / 2f, _spawnAreaHeight / 2f);
         
-        Vector3 spawnPosition = transform.position + new Vector3(randomX, 0f, randomZ) + _spawnOffset;
-        
-        GameObject enemy = Instantiate(_BonusSpeed, spawnPosition, transform.rotation * Quaternion.Euler(0, 180, 0));
+        return transform.position + new Vector3(randomX, 0f, randomZ) + _spawnOffset;
     }
 
     private void OnDrawGizmos()

@@ -24,6 +24,8 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/LevelManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/PlayerBonus.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UIHealthController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ZoneKill.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ZoneSpawner.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -119,7 +121,8 @@
       <workItem from="1761400737809" duration="6583000" />
       <workItem from="1761418541877" duration="6008000" />
       <workItem from="1761518482558" duration="2121000" />
-      <workItem from="1761574387068" duration="11244000" />
+      <workItem from="1761574387068" duration="11841000" />
+      <workItem from="1761671340339" duration="4360000" />
     </task>
     <servers />
   </component>
