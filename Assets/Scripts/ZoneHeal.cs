@@ -8,7 +8,7 @@ public class ZoneHeal : MonoBehaviour
 
     [SerializeField] private float _damageInterval = 1f;
 
-    [Header("Lifetime")] [SerializeField] private float _lifetime = 5f;
+    [Header("Lifetime")] [SerializeField] private float _lifetime = 3f;
 
     private HealthSystem _playerHealthInZone;
     private Coroutine _damageCoroutine;

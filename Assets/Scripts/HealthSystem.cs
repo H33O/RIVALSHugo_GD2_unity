@@ -6,9 +6,11 @@ public class HealthSystem : MonoBehaviour
     [Header("Health Settings")]
     [SerializeField] private int _maxHealth = 3;
     [SerializeField] private AudioClip _LoseSound;
-    [SerializeField] private GameObject _loseCanvas;   
+    [SerializeField] private GameObject _loseCanvas;
+    
     public static Action<int> onHealthChanged;
     public static Action onPlayerDied;
+    
     private AudioSource _audioSource;
     private int _currentHealth;
 
@@ -16,7 +18,13 @@ public class HealthSystem : MonoBehaviour
     {
         _currentHealth = _maxHealth;
         onHealthChanged?.Invoke(_currentHealth);
-        _loseCanvas.SetActive(false);
+        
+        if (_loseCanvas != null)
+        {
+            _loseCanvas.SetActive(false);
+        }
+        
+        _audioSource = GetComponent<AudioSource>();
     }
 
     public void TakeDamage(int damage)
@@ -44,10 +52,21 @@ public class HealthSystem : MonoBehaviour
 
     private void Die()
     {
-        _loseCanvas.SetActive(true);
-        _audioSource.PlayOneShot(_LoseSound);
+        Debug.Log("Le joueur est mort ! Mise en pause du jeu.");
+        
+        if (_loseCanvas != null)
+        {
+            _loseCanvas.SetActive(true);
+        }
+        
+        if (_audioSource != null && _LoseSound != null)
+        {
+            _audioSource.PlayOneShot(_LoseSound);
+        }
         
         Time.timeScale = 0f;
+        
+        onPlayerDied?.Invoke();
     }
 
     public int GetCurrentHealth()
