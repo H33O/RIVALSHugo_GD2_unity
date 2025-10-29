@@ -12,6 +12,8 @@ public class ZoneKill : MonoBehaviour
 
     private HealthSystem _playerHealthInZone;
     private Coroutine _damageCoroutine;
+    private AudioSource _audioSource;
+    [SerializeField] private AudioClip _KillSound;
 
     private void Start()
     {
@@ -26,7 +28,14 @@ public class ZoneKill : MonoBehaviour
             if (_playerHealthInZone != null)
             {
                 _damageCoroutine = StartCoroutine(DamageOverTime());
+                if (_audioSource != null && _KillSound != null)
+                {
+                    _audioSource.PlayOneShot(_KillSound);
+                    Destroy(gameObject, _KillSound.length);
+                    Destroy(gameObject,0.2f);
+                }
             }
+            
         }
     }
 

@@ -12,6 +12,9 @@ public class ZoneHeal : MonoBehaviour
 
     private HealthSystem _playerHealthInZone;
     private Coroutine _damageCoroutine;
+    private AudioSource _audioSource;
+    [SerializeField] private AudioClip _HealSound;
+
 
     private void Start()
     {
@@ -27,6 +30,8 @@ public class ZoneHeal : MonoBehaviour
             {
                 _damageCoroutine = StartCoroutine(DamageOverTime());
             }
+            _audioSource.PlayOneShot(_HealSound);
+            Destroy(gameObject, _HealSound.length);
         }
     }
 
