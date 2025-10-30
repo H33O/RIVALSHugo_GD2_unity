@@ -19,4 +19,4 @@ public class AntiVirusZone : MonoBehaviour
             Destroy(other.gameObject);
         }
     }
-}
+} 
