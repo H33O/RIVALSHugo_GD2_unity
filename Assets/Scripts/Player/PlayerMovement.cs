@@ -13,6 +13,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float _speed = 8f;
     [SerializeField] private float _bonusSpeedMultiplier = 1.35f;
     [SerializeField] private float _bonusDuration = 4f;
+    [SerializeField] private AudioClip _SpeedSound;
+    private AudioSource _audioSource;
     
     private float _baseSpeed;
     private float _bonusSpeedEndTime;
@@ -24,6 +26,7 @@ public class PlayerMovement : MonoBehaviour
     {
         _rb = GetComponent<Rigidbody>();
         _baseSpeed = _speed;
+        _audioSource = GetComponent<AudioSource>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -33,6 +36,7 @@ public class PlayerMovement : MonoBehaviour
             _speed = _baseSpeed * _bonusSpeedMultiplier;
             _bonusSpeedEndTime = Time.time + _bonusDuration;
             Destroy(other.gameObject);
+            _audioSource.PlayOneShot(_SpeedSound);
         }
     }
 

@@ -9,6 +9,7 @@ public class VictoryManager : MonoBehaviour
     [SerializeField] private string _nextSceneName = "Map_2";
     [SerializeField] private AudioClip _VictorySound;
     private AudioSource _audioSource;
+    private Scene  _scene;
 
     private bool _hasWon = false;
 
