@@ -12,11 +12,14 @@ public class EnemyKiller : MonoBehaviour
     [SerializeField] private Color _blueColor;
     [SerializeField] private Color _redColor;
     [SerializeField] private Color _ChosenColor;
+    [SerializeField] private AudioClip _KillerSound;
+    private AudioSource _audioSource;
     public MeshRenderer meshRenderer;
 
     private void Start()
     {
         _rb = GetComponent<Rigidbody>();
+        _audioSource = GetComponent<AudioSource>();
         if (_rb != null)
         {
             _rb.linearVelocity = transform.forward * _speed;
@@ -34,9 +37,10 @@ public class EnemyKiller : MonoBehaviour
             if (health != null)
             {
                 health.TakeDamage(_damage);
+                _audioSource.PlayOneShot(_KillerSound);
             }
             
-            Destroy(gameObject);
+            Destroy(gameObject,0.1f);
             return;
         }
 
