@@ -3743,6 +3743,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: VictoryCanva
       objectReference: {fileID: 0}
+    - target: {fileID: 6372087523814986842, guid: 45ea53d036565a343b9af86d2f026c94, type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
