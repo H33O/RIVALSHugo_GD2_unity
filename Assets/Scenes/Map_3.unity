@@ -358,7 +358,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8720392966682382766, guid: b92366a37a313e9488eb424d4c92abe7, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 1084
+      value: 1152
       objectReference: {fileID: 0}
     - target: {fileID: 8720392966682382766, guid: b92366a37a313e9488eb424d4c92abe7, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -1985,8 +1985,8 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 46c757a34c69cb24aa350ed5dc43b570, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.028
-  m_Pitch: 1
+  m_Volume: 0.128
+  m_Pitch: 1.18
   Loop: 1
   Mute: 0
   Spatialize: 0
