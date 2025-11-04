@@ -1531,7 +1531,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d360817cde7f74843a5070264c0ebc70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _scoreToWin: 3
+  _scoreToWin: 30
   _victoryCanvas: {fileID: 588710104}
   _nextSceneName: Map_3
   _VictorySound: {fileID: 8300000, guid: 68e8ecc3f10f5444c97f344fe9604b3f, type: 3}
